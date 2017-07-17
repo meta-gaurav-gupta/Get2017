@@ -20,7 +20,6 @@ public class TestNumbers {
      */
     @Test
     public void testNumbers() {
-        System.out.println("numbers");
         int row = 5;
         int n = 5;
         Pyramid2 instance = new Pyramid2();
