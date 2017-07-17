@@ -18,22 +18,33 @@ public class PyramidMirror {
         
         for (int loopCounter = 1; loopCounter <= n; loopCounter++)
         {
-            spaces = spaces(loopCounter, n);
-            result.append(spaces);
-            numbers = numbers(loopCounter, n);
-            result.append(numbers).append("\n");
+            String upperBody = patternBuilder(loopCounter, n);
+            result.append(upperBody);
         }
         for (int loopCounter = n - 1; loopCounter >= 1; loopCounter--)
         {
-            spaces = spaces(loopCounter, n);
-            result.append(spaces);
-            numbers = numbers(loopCounter, n);
-            result.append(numbers).append("\n");
+            String lowerBody = patternBuilder(loopCounter, n);
+            result.append(lowerBody);
         }
         result = result.deleteCharAt(result.length()-1);
         return result.toString();
     }
-
+    
+    /**
+     * Build pattern by using spaces and numbers
+     * @param loopCounter Integer
+     * @param n Integer
+     * @return String pattern with spaces and numbers
+     */
+    public String patternBuilder(int loopCounter, int n){
+        StringBuilder result = new StringBuilder();
+        String spaces = spaces(loopCounter, n);
+        result.append(spaces);
+        String numbers = numbers(loopCounter, n);
+        result.append(numbers).append("\n");
+        
+        return result.toString();
+    }
     /**
      * Provide Spaces for the Pattern
      * @param row Integer
