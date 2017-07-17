@@ -18,7 +18,6 @@ public class TestSpaces {
      */
     @Test
     public void testSpaces() {
-        System.out.println("spaces");
         int row = 2;
         int n = 5;
         Pyramid2 instance = new Pyramid2();
