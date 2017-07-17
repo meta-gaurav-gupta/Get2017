@@ -2,7 +2,7 @@ package com.metacube.PF;
 
 /**
  * PFAssignment2 - Pyramid Mirror Using Modular Approach
- * @author User
+ * @author Gaurav
  */
 public class PyramidMirror {
     
