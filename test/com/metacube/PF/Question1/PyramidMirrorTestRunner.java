@@ -6,7 +6,7 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 /**
  *
- * @author User
+ * @author Gaurav
  */
 public class PyramidMirrorTestRunner {
     public static void main(String[] args) {
