@@ -14,7 +14,6 @@ public class Pyramid2Test {
      */
     @Test
     public void testPyramid() {
-        System.out.println("pyramid");
         int n = 3;
         Pyramid2 instance = new Pyramid2();
         String expResult = "123\n"
