@@ -14,6 +14,7 @@ public class TestPyramidMirror {
      */
     @Test
     public void testPyramid() {
+        //Positive Test Case
         int n = 3;
         PyramidMirror instance = new PyramidMirror();
         String expResult = 
@@ -23,17 +24,18 @@ public class TestPyramidMirror {
                     +" 121\n"
                     +"  1";
         String result = instance.displayPyramid(n);
-        assertEquals(expResult, result);                                        //Positive Test Case
-        expResult = 
-                        "  1"
+        assertEquals(expResult, result);            
+        
+        //Negative Test Case 
+        expResult = "  1"
                     + " 121"
                     +"12321"
                     +"1234321"
                     +"12321"
                     +" 121"
                     +"  1";
-        n=4;
+        n = 4;
         result = instance.displayPyramid(n);
-        assertNotEquals(expResult, result);                                     //Negative Test Case
+        assertNotEquals(expResult, result);                                     
     }    
 }
