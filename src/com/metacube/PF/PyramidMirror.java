@@ -11,22 +11,22 @@ public class PyramidMirror {
      * @param n Integer
      * @return String Pattern
      */
-    public String displayPyramid(int n){
-        StringBuilder result = new StringBuilder();
+    public String[] displayPyramid(int n){
+        StringBuilder mStringBuilder = new StringBuilder();
         try{
-            n = Integer.parseInt(n+"");
-            if(n<1){
+            n = Integer.parseInt(n + "");
+            if(n < 1){
                 throw new Exception("Input Must Be Greater Than Zero");
             }
             for (int loopCounter = 1; loopCounter <= n; loopCounter++){
                 String upperBody = patternBuilder(loopCounter, n);
-                result.append(upperBody);
+                mStringBuilder.append(upperBody);
             }
             for (int loopCounter = n - 1; loopCounter >= 1; loopCounter--){
                 String lowerBody = patternBuilder(loopCounter, n);
-                result.append(lowerBody);
+                mStringBuilder.append(lowerBody);
             }
-            result = result.deleteCharAt(result.length()-1);
+            mStringBuilder = mStringBuilder.deleteCharAt(mStringBuilder.length()-1);
         }
         catch(NumberFormatException e){
             System.out.println(e.getMessage());
@@ -34,8 +34,8 @@ public class PyramidMirror {
         catch(Exception e){
             System.out.println(e.getMessage());
         }
-        
-        return result.toString();
+        String[] result = mStringBuilder.toString().split("\n");
+        return result;
     }
     
     /**
