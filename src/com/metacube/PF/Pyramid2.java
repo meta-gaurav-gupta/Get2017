@@ -7,42 +7,43 @@ package com.metacube.PF;
 public class Pyramid2 {
     
     /**
-     * Method pyramid
+     * Produce whole Pattern using spaces and numbers
      * @param n Integer
      * @return String Pattern
      */
-    public String pyramid(int n){
+    public String pyramid(int n) {
         String numbers;
         String spaces;
         StringBuilder result = new StringBuilder();
-        for(int loopCounter = n;loopCounter >= 1; loopCounter--){
+        
+        for(int loopCounter = n;loopCounter >= 1; loopCounter--) {
             spaces = spaces(loopCounter, n);
-            //System.out.print(spaces);
             result.append(spaces);
             numbers = numbers(loopCounter, n);
-            //System.out.println(numbers);
             result.append(numbers).append("\n");
         }
+        
         result = result.deleteCharAt(result.length()-1);
         return result.toString();
     }
 
     /**
-     * Method spaces
+     * Provide Spaces for the Pattern
      * @param row Integer
      * @param n Integer
      * @return String Spaces in Pattern
      */
-    public String spaces(int row, int n){
+    public String spaces(int row, int n) {
         StringBuilder spaces = new StringBuilder();
-        for(int spacesCounter = 0; spacesCounter < (n - row); spacesCounter++){
+        
+        for(int spacesCounter = 0; spacesCounter < (n - row); spacesCounter++) {
             spaces.append(" ");
         }
         return spaces.toString();
     }
 
     /**
-     * Method numbers
+     * Provide Numbers for the Pattern
      * @param row String
      * @param n String
      * @return String of Numbers in Pattern
@@ -50,7 +51,7 @@ public class Pyramid2 {
     public String numbers(int row, int n){
         StringBuilder numbers = new StringBuilder();
 
-        for(int numberCounter = 1; numberCounter <= row; numberCounter++){
+        for(int numberCounter = 1; numberCounter <= row; numberCounter++) {
             numbers.append(numberCounter);
         }
         return numbers.toString();
