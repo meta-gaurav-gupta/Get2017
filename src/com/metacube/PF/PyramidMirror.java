@@ -12,21 +12,29 @@ public class PyramidMirror {
      * @return String Pattern
      */
     public String displayPyramid(int n){
-        String numbers;
-        String spaces;
         StringBuilder result = new StringBuilder();
+        try{
+            n = Integer.parseInt(n+"");
+            if(n<1){
+                throw new Exception("Input Must Be Greater Than Zero");
+            }
+            for (int loopCounter = 1; loopCounter <= n; loopCounter++){
+                String upperBody = patternBuilder(loopCounter, n);
+                result.append(upperBody);
+            }
+            for (int loopCounter = n - 1; loopCounter >= 1; loopCounter--){
+                String lowerBody = patternBuilder(loopCounter, n);
+                result.append(lowerBody);
+            }
+            result = result.deleteCharAt(result.length()-1);
+        }
+        catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
         
-        for (int loopCounter = 1; loopCounter <= n; loopCounter++)
-        {
-            String upperBody = patternBuilder(loopCounter, n);
-            result.append(upperBody);
-        }
-        for (int loopCounter = n - 1; loopCounter >= 1; loopCounter--)
-        {
-            String lowerBody = patternBuilder(loopCounter, n);
-            result.append(lowerBody);
-        }
-        result = result.deleteCharAt(result.length()-1);
         return result.toString();
     }
     
