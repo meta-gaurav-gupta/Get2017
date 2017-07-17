@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.metacube.PF.Question1;
 
 import com.metacube.PF.PyramidMirror;
@@ -12,7 +7,7 @@ import org.junit.Test;
 
 /**
  *
- * @author User
+ * @author Gaurav
  */
 public class TestSpaces {
     /**
@@ -20,14 +15,17 @@ public class TestSpaces {
      */
     @Test
     public void testSpaces() {
+        //Positive Test Case
         int row = 2;
         int n = 5;
         PyramidMirror instance = new PyramidMirror();
         String expResult = "   ";
         String result = instance.spaces(row, n);
-        assertEquals(expResult, result);                                        //Positive Test Case
+        assertEquals(expResult, result);  
+        
+        //Negative Test Case
         expResult = " ";
         result = instance.spaces(row, n);
-        assertNotEquals(expResult, result);                                     //Negative Test Case
+        assertNotEquals(expResult, result);                                     
     }
 }
