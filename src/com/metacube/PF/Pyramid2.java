@@ -15,15 +15,25 @@ public class Pyramid2 {
         String numbers;
         String spaces;
         StringBuilder result = new StringBuilder();
-        
-        for(int loopCounter = n;loopCounter >= 1; loopCounter--) {
-            spaces = spaces(loopCounter, n);
-            result.append(spaces);
-            numbers = numbers(loopCounter, n);
-            result.append(numbers).append("\n");
+        try{
+            n = Integer.parseInt(n + "");
+            if(n < 1){
+                throw new Exception("Input Must Be Greater Than Zero");
+            }
+            for(int loopCounter = n;loopCounter >= 1; loopCounter--) {
+                spaces = spaces(loopCounter, n);
+                result.append(spaces);
+                numbers = numbers(loopCounter, n);
+                result.append(numbers).append("\n");
+            }
+            result = result.deleteCharAt(result.length()-1);
         }
-        
-        result = result.deleteCharAt(result.length()-1);
+        catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         return result.toString();
     }
 
@@ -35,10 +45,27 @@ public class Pyramid2 {
      */
     public String spaces(int row, int n) {
         StringBuilder spaces = new StringBuilder();
-        
-        for(int spacesCounter = 0; spacesCounter < (n - row); spacesCounter++) {
-            spaces.append(" ");
+        try{
+            n = Integer.parseInt(n + "");
+            row = Integer.parseInt(row + "");
+            if(n < 1) {
+                throw new Exception("Input Must Be Greater Than Zero");
+            }
+            if(row > n) {
+                throw new Exception("Row must be smaller than input");
+            }
+            
+            for(int spacesCounter = 0; spacesCounter < (n - row); spacesCounter++) {
+                spaces.append(" ");
+            }
         }
+        catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
         return spaces.toString();
     }
 
@@ -50,10 +77,26 @@ public class Pyramid2 {
      */
     public String numbers(int row, int n){
         StringBuilder numbers = new StringBuilder();
-
-        for(int numberCounter = 1; numberCounter <= row; numberCounter++) {
-            numbers.append(numberCounter);
+        try{
+            n = Integer.parseInt(n + "");
+            row = Integer.parseInt(row + "");
+            if(n < 1) {
+                throw new Exception("Input Must Be Greater Than Zero");
+            }
+            if(row > n) {
+                throw new Exception("Row must be smaller than input");
+            }
+            for(int numberCounter = 1; numberCounter <= row; numberCounter++) {
+                numbers.append(numberCounter);
+            }
         }
+        catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
         return numbers.toString();
     }
 }
