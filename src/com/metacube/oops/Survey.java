@@ -45,6 +45,7 @@ public class Survey {
         participants = new Participant[numberOfParticipants];
         for(int indexOfParticipants = 0 ; indexOfParticipants < numberOfParticipants ; indexOfParticipants++ ){
             participants[indexOfParticipants] = new Participant();
+            System.out.println("Participant " + (indexOfParticipant + 1));
             String answer;
             for(String question : listOfQuestions){
                 System.out.println(question);
