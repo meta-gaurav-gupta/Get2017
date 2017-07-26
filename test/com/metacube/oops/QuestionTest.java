@@ -38,4 +38,29 @@ public class QuestionTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of sortQuestions method, of class Question.
+     */
+    @Test
+    public void testSortQuestions() {
+        //Positive Test Case
+        Question instance = new Question();
+        ArrayList<String> expResult = new ArrayList<>();
+        expResult.add("Q1. Overall Rating, Single Select, 1/2/3/4/5");
+        expResult.add("Q2. Area of improvement, Multi Select, Service Quality/Communication/Delivery Process");
+        expResult.add("Q3. Work progress, Text");
+        expResult.add("Q4. No of person enrolled, Number");
+        expResult.add("Q5. Feedback, Text");
+        ArrayList<String> input = new ArrayList<>();
+        input.add("Q2. Area of improvement, Multi Select, Service Quality/Communication/Delivery Process");
+        input.add("Q1. Overall Rating, Single Select, 1/2/3/4/5");
+        input.add("Q3. Work progress, Text");
+        input.add("Q5. Feedback, Text");
+        input.add("Q4. No of person enrolled, Number");
+        
+        ArrayList<String> result = instance.sortQuestions(input);
+        System.out.println(result);
+        assertEquals(expResult, result);
+        assertEquals(expResult, result);
+    }
 }
