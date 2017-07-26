@@ -34,4 +34,14 @@ public class Question {
         return questions;
     }
     
+    /**
+     * Sort the given list of questions
+     * @param questions List of questions
+     * @return Sorted list of questions
+     */
+    public ArrayList<String> sortQuestions(ArrayList<String> questions){
+        Collections.sort(questions, (String o1, String o2) -> o1.compareTo(o2));
+        return questions;
+    }
+    
 }
