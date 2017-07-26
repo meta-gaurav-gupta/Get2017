@@ -59,8 +59,6 @@ public class QuestionTest {
         input.add("Q4. No of person enrolled, Number");
         
         ArrayList<String> result = instance.sortQuestions(input);
-        System.out.println(result);
-        assertEquals(expResult, result);
         assertEquals(expResult, result);
     }
 }
