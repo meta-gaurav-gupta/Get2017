@@ -1,0 +1,135 @@
+
+body{
+	margin: 2% 2% 2% 2%;
+	background: url('images/background.jpg');	
+}
+
+.mainContainer{
+	background: white;
+	-webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+	border-radius: 10px;
+}
+
+#mainHeader{
+	border-radius: 10px 10px 0px 0px;
+	background: skyblue;
+	padding: 2%;
+}
+
+nav{
+	  background: rgb(145,170,175); /* For browsers that do not support gradients */
+	  background: -webkit-linear-gradient(left top, rgb(145,170,175), white); /* For Safari 5.1 to 6.0 */
+	  background: -o-linear-gradient(bottom right, rgb(145,170,175), white) /* For Opera 11.1 to 12.0 */
+	  background: -moz-linear-gradient(bottom right, rgb(145,170,175), white); /* For Firefox 3.6 to 15 */
+	  background: linear-gradient(to bottom right, rgb(145,170,175), white); /* Standard syntax */
+	  padding: 2px;
+}
+
+.navLinks{
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	padding: 8px;
+	transition: 2s background;
+}
+
+.active{
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	padding: 8px;
+	border: 1px solid black;
+	background: skyblue;
+}
+
+.navLinks:hover{
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	padding: 8px;
+	background: skyblue;
+}
+
+.mainContent{
+
+	display: flex;
+	padding: 2% 2% 2% 2%;
+}
+
+.leftbar{
+	width: 30%;
+}
+
+.right-pane{
+	width: 30%;
+}
+
+.midContent{
+	flex: 1;
+	-webkit-flex : 1;
+	-moz-flex: 1;
+	-o-flex: 1;
+}
+
+.box{
+	margin-bottom: 4%;
+	width:90%;
+	border: 2px solid rgba(145,170,175,0.4);
+	border-radius: 10px;
+	background: rgba(145,170,175,0.2);
+}
+
+.boxHeader,.boxHeader2{
+	margin: 2%;
+	background: rgba(135,206,250,0.7);
+	padding: 8px;
+	border-radius: 5px;
+	color: black;
+	font-weight: bold;
+}
+
+.menuList{
+	list-style-type: none;
+}
+
+.menuItem{
+	margin: 2%;
+	padding: 8px;
+	color: black;
+}
+
+.activeItem{
+	background: rgba(135,206,250,0.7);
+}
+
+.text{
+	padding: 2%;
+}
+
+.searchbox{
+	width: 100%;
+}
+
+.button{
+	background : rgba(145,170,175,0.9);
+	border: 0px solid black;
+	padding: 2%;
+	border-radius: 5px;
+}
+
+ul{
+	list-style-type: none;
+	margin-left: -10%;
+}
+
+a{
+	display: inline-block;
+	color: rgb(145,170,150);
+}
+
+footer{
+	background: rgb(241,238,233);
+	border-radius: 0px 0px 10px 10px;
+	text-align: center;
+	padding: 2%;
+}
