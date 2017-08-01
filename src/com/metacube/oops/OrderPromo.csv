@@ -1,0 +1,4 @@
+OrderFixedAmountPromotion,100.00,1000.00
+OrderFixedAmountPromotion,200.00,2000.00
+OrderFixedPercentPromotion,20,1400.00
+OrderFixedPercentPromotion,10,1500.00
