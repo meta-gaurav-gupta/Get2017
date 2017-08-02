@@ -1,0 +1,62 @@
+html,body {
+	height: 100%;
+	overflow: hidden;
+}
+body{
+	background-color: #eee;
+	font-family: arial;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+* {
+    box-sizing: border-box;
+}
+.container{
+	padding: 20px;
+}
+.col{
+	width: 25%;
+	float: left;
+	padding: 40px;
+	background-color: #263238;
+	min-width: 140px;
+	text-align: center;
+	color: #263238;
+	font-weight: bold;
+}
+.box{
+	height: 100px;
+	width: 100px;
+	background-color: #eee;
+	margin: auto;
+	line-height: 100px;
+}
+.rotate{
+	-webkit-transform: rotate(0deg);
+	transition: transform 1s;
+}
+.rotate:hover{
+	-webkit-transform: rotate(360deg);
+}
+.scale{
+	-webkit-transform: scale(1,1);
+	transition: transform 1s;
+}
+.scale:hover{
+	-webkit-transform: scale(2,2);
+}
+.skew{
+	-webkit-transform: skew(0deg,0deg);
+	transition: transform 1s;
+}
+.skew:hover{
+	-webkit-transform: skew(20deg,20deg);
+}
+.translate{
+	-webkit-transform: translate(0,0);
+	transition: transform 1s;
+}
+.translate:hover{
+	-webkit-transform: translate(50px,100px);
+}
