@@ -1,0 +1,31 @@
+html,body {
+	height: 100%;
+	overflow: hidden;
+}
+body{
+	font-family: arial;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+* {
+    box-sizing: border-box;
+}
+.container{
+	padding: 20px;
+}
+.col{
+	width: 16%;
+	float: left;
+	padding: 40px;
+	min-width: 140px;
+	text-align: center;
+	color: #263238;
+	font-weight: bold;
+}
+.box{
+	height: 100px;
+	width: 100px;
+	margin: auto;
+	line-height: 100px;
+}

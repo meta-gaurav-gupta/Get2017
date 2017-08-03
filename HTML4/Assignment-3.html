@@ -1,0 +1,141 @@
+<html lang="en">
+   <head>
+      <title>Assignment</title>
+      <link rel="stylesheet" type="text/css" href="css/assignment-2.css">
+   </head>
+   <body>
+         <div class="container">
+         <div class="col">
+                <div class="box">
+                    <canvas id="canvas-first" width="100" height="100"></canvas>
+                </div>
+            </div>
+         <div class="col">
+            <div class="box">
+                    <canvas id="canvas-second" width="100" height="100"></canvas>
+                </div>
+         </div>
+         <div class="col">
+            <div class="box">
+                    <canvas id="canvas-third" width="100" height="100"></canvas>
+                </div>
+         </div>
+         <div class="col">
+            <div class="box">
+                    <canvas id="canvas-forth" width="100" height="100"></canvas>
+                </div>
+         </div>
+            <div class="col">
+                <div class="box">
+                    <canvas id="canvas-fifth" width="100" height="100"></canvas>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box">
+                    <canvas id="canvas-sixth" width="100" height="100"></canvas>
+                </div>
+            </div>
+      </div> 
+   </body>
+</html>    
+
+<script>
+      var canvas = document.getElementById('canvas-first');
+      var context = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 45;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = '#2e94d1';
+      context.fill();
+      context.lineWidth = 5;
+      context.strokeStyle = '#2e94d1';
+      context.stroke();
+      var canvas = document.getElementById('canvas-second');
+      var context = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 45;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0.5 * Math.PI, 1.5 * (Math.PI) , false);
+      context.fillStyle = '#2e94d1';
+      context.fill();
+      context.lineWidth = 5;
+      context.strokeStyle = '#2e94d1';
+      context.stroke();
+   
+   context.beginPath();
+   context.arc(centerX, centerY, radius, 1.5 * Math.PI, 0.5 * (Math.PI) , false);
+    context.fillStyle = '#FFFFFF';
+      context.fill();
+      context.lineWidth = 5;
+      context.strokeStyle = '#808080';
+      context.stroke();
+      var canvas = document.getElementById('canvas-third');
+      var context = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 40;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = '#FFFFFF';
+      context.fill();
+      context.lineWidth = 10;
+      context.strokeStyle = '#982068';
+      context.stroke();
+      var canvas = document.getElementById('canvas-forth');
+      var context = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 50;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = '#fcb03c';
+      context.fill();
+   context.lineWidth = 10;
+   context.moveTo(45, 20);
+   context.lineTo(55, 20);
+   context.lineTo(55, 45);
+   context.lineTo(80, 45);
+   context.lineTo(80, 55);
+   context.lineTo(55, 55);
+   context.lineTo(55, 80);
+   context.lineTo(45, 80);
+   context.lineTo(45, 55);
+   context.lineTo(20, 55);
+   context.lineTo(20, 45);
+   context.lineTo(45, 45);
+   context.lineTo(45, 15);
+   context.strokeStyle = '#FFFFFF';
+      context.stroke();
+      var canvas = document.getElementById('canvas-fifth');
+      var context = canvas.getContext('2d');
+   
+   context.beginPath();
+   context.moveTo(45, 5);
+   context.lineTo(95, 95);
+   context.lineTo(5, 95);
+   context.lineTo(45, 5);
+   context.fillStyle = '#982068';
+      context.fill();
+   context.strokeStyle = '#982068';
+      context.stroke();
+      var canvas = document.getElementById('canvas-sixth');
+      var context = canvas.getContext('2d');
+   
+   context.beginPath();
+   context.moveTo(5, 5);
+   context.lineTo(5, 95);
+   context.lineTo(95, 95);
+   context.lineTo(95, 5);
+   context.lineTo(5, 5);
+   context.fillStyle = '#1B5E20';
+      context.fill();
+   context.strokeStyle = '#1B5E20';
+      context.stroke();
+</script>
