@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  		<meta charset="UTF-8">
+  		<title>Assignment</title>
+  		<meta name="description" content="">
+  		<link rel="stylesheet" type="text/css" href="css/assignment-3-style.css">
+      <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+      </script>
+	</head>
+	<body>
+    <div class="container">
+      <div id="div1" class="col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="box">
+          <img src="images/instagram.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="100">
+        </div>
+      </div>
+      <div id="div3" class="col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="box">
+          <img src="images/pinterest.png" draggable="true" ondragstart="drag(event)" id="drag3" width="100" height="100">
+        </div>
+      </div>
+      <div id="div5" class="col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="box">
+          <img src="images/facebook.png" draggable="true" ondragstart="drag(event)" id="drag5" width="100" height="100">
+        </div>
+      </div>
+      <div id="div7" class="col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="box">
+          <img src="images/twitter.png" draggable="true" ondragstart="drag(event)" id="drag7" width="100" height="100">
+        </div>
+      </div>
+      <div class="col-4">
+    		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" class="box"></div>
+        <span>Facebook</span>
+    	</div>
+    	<div class="col-4">
+    		<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" class="box"></div>
+        <span>Twitter</span>
+    	</div>
+    	<div class="col-4">
+    		<div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" class="box"></div>
+        <span>Instagram</span>
+    	</div>
+    	<div class="col-4">
+    		<div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)" class="box"></div>
+        <span>Pinterest</span>
+    	</div>
+    </div> 
+	</body>
+</html>    

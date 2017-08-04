@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>HTML5 Storage Demonstration</title>
+	<script src="js/storage.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/assignment-1-style.css">
+</head>
+<body onload="check();">
+	<div id="container">
+		<div class="container-body">
+			<p id="msg">Hello Guest !!</p>
+			<div id="login-box">
+				<div class="left-box">
+					<input type="email" placeholder="Enter Your Login Email" id="textbox"/>
+					<button type="button" id="save" onclick="saveStore();" >Save the new Login Info</button>
+					<div id="err-msg"></div>
+				</div>
+				<div class="right-box">
+					<button type="button" id="get" onclick="getStore();" >Login using Old Info</button>
+					<button type="button" id="remove" onclick="removeLogin();" >Remove Old Login Info</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

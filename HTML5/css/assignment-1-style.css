@@ -1,0 +1,85 @@
+body{
+	background: #eee;
+	margin: 0;
+	padding: 0;
+}
+#container{
+	padding-top: 15%;
+}
+.container-body{
+	z-index: 1;
+	width: 40%;
+	background: #263238;
+	border-radius: 5px 5px 5px 5px;
+	padding: 1%;
+	margin: auto;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+}
+#msg{
+	background: rgba(0,0,0,0.5);
+	padding: 1%;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+#login-box{
+	display: flex;
+}
+.left-box{
+	flex: 1;
+}
+.right-box{
+	flex: 1;
+}
+button[id=save],button[id=get],button[id=remove],input{
+	display: block;
+	padding: 2%;
+	margin: 2%;
+}
+input{
+	width: 80%;
+	border-radius: 5px;
+	border: 1px solid black;
+	background: rgba(255,255,255,0.5);
+	color: black;
+	transition: box-shadow 0.4s;
+}
+button[id=save]{
+	background: rgba(0,128,128,0.6);
+	border-radius: 5px;
+	border: 1px solid black;
+	color: white;
+	font-weight: bold;
+	transition: box-shadow 0.4s;
+}
+button[id=remove]{
+	margin: auto;
+	background: rgba(255,0,0,0.4);
+	border-radius: 5px;
+	border: 1px solid black;
+	color: white;
+	font-weight: bold;
+	width: 70%;
+	transition: box-shadow 0.4s;
+}
+button[id=get]{
+	margin: auto;
+	background: rgba(0,128,0,0.4);
+	border-radius: 5px;
+	border: 1px solid black;
+	color: white;
+	font-weight: bold;
+	width: 70%;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	transition: box-shadow 0.4s;
+}
+button[id=save]:hover,button[id=remove]:hover,button[id=get]:hover,input[type=email]:focus{
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+#err-msg{
+	color: white;
+	background: red;
+	font-weight: bold;
+	padding: 2%;
+}

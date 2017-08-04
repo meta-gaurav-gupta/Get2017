@@ -1,0 +1,33 @@
+html, 
+body {
+ 	height: 100%;
+ 	overflow: hidden;
+}
+body {
+	background-color: #eee;
+	font-family: arial;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+* {
+   box-sizing: border-box;
+}
+.container{
+	padding: 20px;
+}
+.col-4{
+	width: 25%;
+	float: left;
+	padding: 20px;
+	background-color: #000;
+	min-width: 140px;
+	text-align: center;
+	color: #fff;
+}
+.box{
+	height: 100px;
+	width: 100px;
+	background-color: #fff;
+	margin: auto;
+}
