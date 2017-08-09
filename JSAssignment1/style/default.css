@@ -1,0 +1,30 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+#header{
+	background: black;
+	color: white;
+	font-weight: bold;
+}
+ul{
+	list-style-type: none;
+	-webkit-margin-before: 0em
+}
+li{
+	display: inline;
+}
+.link{
+	padding: 20px;
+	display: inline-block;
+	cursor: pointer;
+
+}
+.link:hover {
+	background: white;
+	color: black;
+}
+.active{
+	background: white;
+	color: black;
+}
