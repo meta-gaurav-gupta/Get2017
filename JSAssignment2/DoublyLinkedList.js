@@ -71,13 +71,13 @@ DoublyLinkedList.prototype.remove = function(position) {
     var deletedNode = null;
  
     if (length === 0 || position < 1 || position > length) {
-        throw new Error(message.failure);
+        return null;
     }
  
     if (position === 1) {
         this.head = currentNode.next;
  
-        if (!this.head) {
+        if (this.head != null) {
             this.head.previous = null;
         } else {
             this.tail = null;
