@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML5 - Contact Us</title>
+		<meta name="title" content="HTML5 Contact Us" />
+		<meta name="description" content="contact us page of html5" />
+		<meta property="og:title" content="HTML5 Contact Us" />
+		<meta property="og:author" content="Gaurav Gupta">
+		<link rel="icon" type="text/css" href="images/HTML5_logo.png" />
+		<script src="js/localStroage.js"></script>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+	</head>
+	<body onload="getFromLocalStorage();">
+		<!-- Header Start -->
+		<header>
+			<table width="70%" align="center">
+				<tr>
+					<td width="70%">
+						<img src="images/HTML5_logo.png" width="56px" height="56px" />
+					</td>
+					<td width="30%">
+						<a href="index.html">Home</a>
+						<a href="#">About</a>
+						<a href="#">Product</a>
+						<a href="#">Gallary</a>
+						<a href="contact.html">Contact</a>	
+					</td>
+				</tr>
+			</table>
+		</header>
+		<!-- Header End-->
+		<hr/>
+		
+		<center>
+			<img src="images/contact_us.jpg" align="center" width="70%"/>
+		</center>
+		<br/>
+		
+		<!-- Contact Form Starts-->
+			<table align="center">
+				<tr>
+					<td width="30%">Name</td>
+					<td width="70%"><input type="text" name="username" id="username" placeholder="Name" autofocus required /></td>
+				</tr>	
+				<tr>
+					<td width="30%">Email</td>
+					<td width="70%"><input type="email" name="useremail" id="useremail" placeholder="Email" required /></td>
+				</tr>
+				<tr>
+					<td width="30%">City</td>
+					<td width="70%">
+						<select name="usercity" id="usercity">
+							<option value="Udaipur">Udaipur</option>
+							<option value="Jaipur">Jaipur</option>
+							<option value="Alwar">Alwar</option>
+							<option value="Kota">Kota</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="30%">Organisation Name</td>
+					<td width="70%"><input type="text" name="userorg" id="userorg" placeholder="Organisation Name" required /></td>
+				</tr>
+				<tr>
+					<td width="30%">Contact Number</td>
+					<td width="70%"><input type="text" name="usermob" id="usermob" placeholder="Contact Number" maxlength="10" minlength="10" required /></td>
+				</tr>
+				<tr>
+					<td width="30%">Message</td>
+					<td width="70%">
+						<textarea name="usermessage" id="usermessage" placeholder="Enter your message here"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="submit" value="Submit" onclick="saveToLocalStorage();" ></td>
+					<td><input type="submit" name="submit" value="Clear" onclick="clearLocalStorage();" ></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="box" id="info"></td>
+				</tr>
+			</table>
+		<!-- Contact Form End -->
+		<hr/>
+		
+		<!-- Footer Start -->
+		<footer align="center">
+			&copy Copyright 2017-2019. All Right Reserved.
+		</footer>
+		<!-- Footer End -->
+		
+	</body>
+</html>
