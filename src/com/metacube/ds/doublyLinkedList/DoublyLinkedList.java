@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.metacube.ds.DoublyLinkedList;
+package com.metacube.ds.doublyLinkedList;
 
 import com.metacube.ds.MyList;
 
