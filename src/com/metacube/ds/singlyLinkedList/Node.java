@@ -1,4 +1,4 @@
-package com.metacube.ds.SinglyLinkedList;
+package com.metacube.ds.singlyLinkedList;
 
 /**
  *
