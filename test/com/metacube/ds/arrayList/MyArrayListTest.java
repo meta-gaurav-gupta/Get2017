@@ -1,4 +1,4 @@
-package com.metacube.ds.ArrayList;
+package com.metacube.ds.arrayList;
 
 import com.metacube.ds.Utility;
 import java.util.Arrays;
