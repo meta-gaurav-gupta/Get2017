@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.metacube.ds.SinglyLinkedList;
+package com.metacube.ds.singlyLinkedList;
 
 import com.metacube.ds.Utility;
 import java.util.Arrays;
