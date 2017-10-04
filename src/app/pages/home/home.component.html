@@ -1,121 +1,129 @@
 <header>
-    <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-12">
         <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-sm-2 col-2 logo">
-                        <img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" width="24">
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-sm-10 col-10">
-                        <form>
-                          <div class="inner-addon right-addon">
-                              <i class="fa fa-search font-12"></i>
-                              <input type="text" name="search" placeholder="Search" class="form-control">  
-                          </div>
-                      </form>
-                    </div>
-                </div>
-             </div>
-             <div class="col-md-7 text-right text-center-sm top-distance-sm" >
-                <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="30">
-                <span class="text horizontal-space" *ngIf="user"> {{user.name}}</span>
-                <span class="vertical-bar"></span>
-                <span class="text horizontal-space">Home</span>
-                <span class="label">5</span>
-                <span class="vertical-bar"></span>
-                <span class="text horizontal-space">Find friends</span>
-                <span class="horizontal-space hide-on-small"></span>
-                <span class="horizontal-space hide-on-small"><i class="fa fa-users top-icons"></i></span>
-                <span class="horizontal-space hide-on-small"><i class="fa fa-globe top-icons"></i></span>
-                <span class="horizontal-space hide-on-small"><i class="fa fa-comment top-icons"></i></span>
-                <span class="vertical-bar hide-on-small"></span>
-                <span class="horizontal-space hide-on-small"><i class="fa fa-question-circle top-icons"></i></span>
-                <span class="horizontal-space"><i class="fa fa-sort-desc top-icons"></i></span>
-             </div>
+          <div class="col-lg-1 col-md-2 col-sm-2 col-2 logo">
+            <img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" width="24">
+          </div>
+          <div class="col-lg-11 col-md-10 col-sm-10 col-10">
+            <form>
+              <div class="inner-addon right-addon">
+              <button class="btn ico btn-link">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+              <input type="text" name="search" placeholder="Search" class="form-control">  
+              </div>
+            </form>
+          </div>
         </div>
-     </div>
+        </div>
+        <div class="col-md-7 text-right text-center-sm top-distance-sm" >
+        <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="30">
+        <span class="text horizontal-space pointer" (click)="profile(user.id)" *ngIf="user"> {{user.name}}</span>
+        <span class="vertical-bar"></span>
+        <span class="text horizontal-space pointer" (click)="goToHome()" >Home</span>
+        <span class="horizontal-space hide-on-small"></span>
+        <span class="horizontal-space hide-on-small"><i class="fa fa-users top-icons"></i></span>
+        <span class="horizontal-space hide-on-small"><i class="fa fa-globe top-icons"></i></span>
+        <span class="horizontal-space hide-on-small"><i class="fa fa-comment top-icons"></i></span>
+        <span class="vertical-bar hide-on-small"></span>
+        <span class="horizontal-space hide-on-small"><i class="fa fa-question-circle top-icons"></i></span>
+        <span class="horizontal-space dropdown">
+          <i class="top-icons dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"></i>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <span class="dropdown-item pointer" (click)="doLogout()">Logout</span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
 </header>
 <div class="container nav-distance ">
   <div class="row">
-      <div class="col-12 none show-xs">
-          <a href="" class="horizontal-space"><img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="25"></a>
-          <a href="" class="horizontal-space"><img src="http://static.adweek.com/adweek.com-prod/wp-content/uploads/sites/2/2013/01/news-feed1.png" width="25"></a>
-          <a href="" class="horizontal-space"><img src="http://www.freeiconspng.com/uploads/facebook-messenger-vector-logo-logo-15.png" width="25"></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-sm-3 col-2">
-        <div class="position-fixed position-absolute-sm">
-          <h4><i class="fa fa-users" aria-hidden="true"></i> Friends</h4>
-          <div class="verticle-space" *ngFor="let friend of friends">
-                <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                <span class="horizontal-space side-text" style="cursor: pointer;" (click)="profile(friend.id)"> {{friend.name}}</span>
-            </div>
+    <div class="col-lg-2 col-md-4 col-sm-3 col-2 hide-on-xsmall">
+      <div class="position-fixed position-absolute-sm">
+        <h4><i class="fa fa-users" aria-hidden="true"></i> Friends</h4>
+        <div class="verticle-space" *ngFor="let friend of friends">
+          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+          <span class="horizontal-space side-text pointer" (click)="profile(friend.id)"> {{friend.name}}</span>
         </div>
       </div>
-      <div class="col-lg-7 col-md-9 col-sm-9 col-12">
-          <div class="card mb-3">
-            <div class="card-header">
-              <span class="horizontal-space make-post-bar"> <i class="fa fa-pencil"></i> Make Post</span>
-            </div>
-            <div class="card-body">
-              <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="50" style="vertical-align: baseline;">
-              <textarea class="horizontal-space grey" style="display: inline-block; width: 90%; box-sizing: border-box; border: 0px; " rows="1" [(ngModel)]="newPost" placeholder="Hi, User. Tell your friends about your day."></textarea>
-              <hr>
-              <span class="btn-footer btn-color-grey"><i class="fa fa-photo"></i> Photo/Video</span>
-              <span class="btn-footer btn-color-grey"><i class="fa fa-smile-o"></i> Feeling/Activity</span>
-              <span class="btn-footer btn-color-blue float-right" (click)="addPost()">Post</span>
-            </div>
+    </div>
+    <div class="col-lg-7 col-md-8 col-sm-9 col-12">
+      <div class="card mb-3">
+        <div class="card-header">
+          <span class="horizontal-space make-post-bar"> <i class="fa fa-pencil"></i> Make Post</span>
+        </div>
+        <div class="card-body">
+          <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="50" class="img-vertical-align">
+          <textarea class="horizontal-space grey fixed-text-area" rows="1" [(ngModel)]="newPost" placeholder="Hi, User. Tell your friends about your day."></textarea>
+          <hr>
+          <span class="btn-footer btn-color-grey post-footer-xs"><i class="fa fa-photo"></i> Photo/Video</span>
+          <span class="btn-footer btn-color-grey post-footer-xs"><i class="fa fa-smile-o"></i> Feeling/Activity</span>
+          <span class="btn-footer btn-color-blue float-right post-footer-sm" (click)="addPost()">Post</span>
+        </div>
+      </div>
+
+      <div class="card mb-3" *ngFor="let post of posts">
+        <div class="card-header">
+          <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="30"> 
+          <span (click)="profile(post.userId)" class="post-anchor font-14" *ngIf="user"> {{user.name}}</span>
+            <div class="dropdown float-right">
+              <span class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"></span>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button class="btn btn-link dropdown-item" (click)="deletePost(post)">Delete Post</button>
+              </div>
+              </div>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{post.body}}</p>
+        </div>
+        <div class="card-footer">
+          <div class="card-block" *ngFor="let comment of post.comments">
+            <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="20">
+            <span class="post-anchor font-12">{{comment.email}}</span>
+            <span class="comment font-12">{{comment.body}}</span>
           </div>
-
-          <div class="card mb-3" *ngFor="let post of posts">
-                <div class="card-header">
-                        <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="30"> 
-                        <span style="cursor: pointer;" (click)="profile(post.userId)" class="post-anchor" *ngIf="user"> {{user.name}}</span>
-                        <!--<div class="dropdown">
-                          <a class="float-right post-anchor dropdown-toggle" id="dropdownMenuButton{{post.id}}" data-toggle="dropdown"><i class="fa fa-ellipsis-h"></i></a>
-                        </div>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Delete Post</a>
-                          </div> -->
-
-                          <div class="dropdown float-right">
-                              <button class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">
-                                Dropdown button
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                            </div>
-                      </div>
-            <div class="card-body">
-                <p class="card-text">{{post.body}}</p>
-              <div class="col-md-12">
-              <hr>
-                <span class="like-comment"><b><i class="fa fa-comment"></i> Comment</b></span>
+          <div class="card-block">
+            <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="20">
+            <span class="post-anchor font-12">{{user.name}}</span>
+          </div>
+          <div class="card-block">
+            <form>
+              <div class="form-group">
+                <div class="inner-addon right-addon">
+                  <button class="btn ico btn-color-blue" (click)="addComment(post)">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                  </button>
+                    <input type="text" name="comment" class="form-control" placeholder="Write your comment here ..." [(ngModel)]="post.comment">
+                </div>
+              </div>
+            </form>
+          </div>
+          <button *ngIf="post.isCommentsHidden" class="btn btn-link like-comment font-14" (click)="getComments(post)"><b><i class="fa fa-comment"></i> See All Comments</b></button>
+        </div>
+      </div>
+        <button class="btn btn-block btn-lg mb-3 btn-color-blue" (click)="loadMore()">Load More Posts</button>
+    </div>
+    <div class="col-md-3 hide-on-small">
+      <div class="position-fixed">
+        <div class="verticle-space">
+            <div class="card">
+              <div class="card-body">
+                <img src="https://lh4.ggpht.com/81yK2idsiFS53nMhOIFhLJSIPnv_emWsuEDvtk2tNCX2XS75AhZp5fhmGDVuBvzECQh7CATM=w300">
               </div>
             </div>
-          </div>
-          <button class="btn btn-block btn-lg mb-3 btn-color-blue" (click)="loadMore()">Load More Posts</button>
-      </div>
-      <div class="col-md-3 hide-on-small">
-         <div class="position-fixed">
-            <div class="verticle-space">
-                <div class="card">
-                  <div class="card-body">
-                    <img src="https://lh4.ggpht.com/81yK2idsiFS53nMhOIFhLJSIPnv_emWsuEDvtk2tNCX2XS75AhZp5fhmGDVuBvzECQh7CATM=w300">
-                  </div>
-                </div>
-            </div>
-            <div class="verticle-space">
-                <div class="card">
-                  <div class="card-body">
-                    Trending
-                  </div>
-                </div>
-            </div>
         </div>
-      </div>
+        <div class="verticle-space">
+          <div class="card">
+            <div class="card-body">
+              Trending
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
   </div>
 </div>
 <footer>

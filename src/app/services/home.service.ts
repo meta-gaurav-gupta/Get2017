@@ -4,10 +4,13 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Post } from '../pages/home/post';
 import { User } from '../pages/home/user';
+import { Comment } from '../pages/home/comment';
+
 @Injectable()
 export class HomeService {
   private postUrl = 'https://jsonplaceholder.typicode.com/posts/';
   private userUrl = 'https://jsonplaceholder.typicode.com/users/';
+  private commentUrl = 'https://jsonplaceholder.typicode.com/comments/';
   private currentUser: number;
   constructor(private http: Http) { }
 
@@ -18,6 +21,7 @@ export class HomeService {
     .catch(this.handleError);
   }
   getPostsOfUser(userId: number): Promise<Post[]> {
+    if (userId === undefined) { return undefined; }
     return this.http.get(this.postUrl + '?userId=' + userId)
                .toPromise()
                .then((response) => response.json() as Post[])
@@ -25,21 +29,26 @@ export class HomeService {
   }
 
   getFriends(): Promise<User[]> {
-    return this.http.get(this.userUrl).toPromise().then((response) => response.json()).catch(this.handleError);
+    return this.http.get(this.userUrl).toPromise().then((response) => response.json() as User[]).catch(this.handleError);
   }
 
   getUser(id: number): Promise<User> {
+    if (id === undefined) { return undefined; }
     return this.http.get(this.userUrl + id).toPromise().then((response) => response.json() as User).catch(this.handleError);
   }
 
+  getComments(postId: number): Promise<Comment[]> {
+    if (postId === undefined) { return undefined; }
+    return this.http.get(this.commentUrl + '?postId=' + postId)
+    .toPromise().then((response) => response.json() as Comment[]).catch(this.handleError);
+  }
+
   getUserByEmail(email: string): Promise<User> {
+    if (email === undefined) { return undefined; }
     return this.http.get(this.userUrl + '?email=' + email).toPromise().then((response) => {
-      console.log(response.json().length);
       if (response.json().length > 0) {
-        console.log('>0');
-        return response.json()[0];
+        return response.json()[0] as User;
       } else {
-        console.log('<0');
         return undefined;
       }
     }).catch(this.handleError);
@@ -51,11 +60,14 @@ export class HomeService {
   }
 
   setCurrentUser(userId: number): void {
-    this.currentUser = userId;
+    localStorage.setItem('userId', JSON.stringify(userId));
   }
 
   getCurrentUser(): number {
-    return this.currentUser;
+    let currentUser = JSON.parse(localStorage.getItem('userId'));
+    console.log('currentUser ' + currentUser);
+    return currentUser;
   }
+
 
 }

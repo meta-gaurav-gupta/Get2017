@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 import { HomeService } from '../../services/home.service';
 import { Post } from './post';
 import { User } from './user';
+import { Comment } from './comment';
 import { FilterNamePipe } from '../../filter.names.pipe';
 import 'rxjs/add/operator/switchMap';
 
@@ -16,14 +17,14 @@ export class HomeComponent implements OnInit {
   posts: Post[] = [];
   friends: User[] = [];
   user: User;
-  placeholderText: string;
   initialItem = 0;
   newPost: string;
   loadMoreData: boolean;
-  constructor(private homeService: HomeService, private router: Router , private route: ActivatedRoute) { }
+
+  constructor(private homeService: HomeService, private router: Router) { }
 
   ngOnInit() {
-    if (this.homeService.getCurrentUser() === undefined) {
+    if (this.homeService.getCurrentUser() === -1) {
       this.goToLogin();
     }
     this.getUser();
@@ -43,7 +44,11 @@ export class HomeComponent implements OnInit {
   getPosts(): void {
     this.homeService.getPosts()
     .then((posts) => {
-      this.posts = this.posts.concat(posts.slice(this.initialItem, this.initialItem + 10));
+      posts = posts.slice(this.initialItem, this.initialItem + 10);
+      for (let post of posts) {
+        post.isCommentsHidden = true;
+      }
+      this.posts = this.posts.concat(posts);
     });
   }
 
@@ -52,22 +57,75 @@ export class HomeComponent implements OnInit {
   }
 
   getUser(): void {
+    console.log(this.homeService.getCurrentUser());
     this.homeService.getUser(this.homeService.getCurrentUser()).then((user) => this.user = user);
   }
 
+  getComments(post: Post): void {
+    console.log(post.isCommentsHidden);
+    post.isCommentsHidden = false;
+    this.homeService.getComments(post.id).then((comments) => {
+      if (post.comments === undefined) {
+        post.comments = comments;
+      } else {
+        post.comments = post.comments.concat(comments);
+      }
+    });
+  }
 
   addPost(): void {
-    const post: Post = {
+    if (this.newPost === '' || this.newPost === undefined) {
+      return;
+    }
+    let post: Post = {
       userId: this.homeService.getCurrentUser(),
       id: 0,
       title: '',
-      body: this.newPost
+      body: this.newPost,
+      comment: '',
+      comments: [],
+      isCommentsHidden: true
     };
     this.newPost = '';
     this.posts.unshift(post);
   }
 
+  deletePost(post: Post) {
+    let index = this.posts.indexOf(post);
+    this.posts.splice(index, 1);
+  }
+
+  addComment(post: Post): void {
+    if (post.comment === '' || post.comment === undefined) {
+      return;
+    }
+    let comment: Comment = {
+      postId: post.id,
+      id: 0,
+      name: '',
+      email: this.user.email,
+      body: post.comment,
+    };
+    if (post.comments === undefined) {
+      post.comments = [];
+    }
+    post.comments.push(comment);
+    post.comment = '';
+  }
+
   goToLogin(): void {
     this.router.navigate(['/login']);
   }
+
+
+  doLogout(): void {
+    this.homeService.setCurrentUser(-1);
+    this.user = undefined;
+    this.goToLogin();
+  }
+
+  goToHome(): void {
+    this.router.navigate(['/home']);
+  }
+
 }
