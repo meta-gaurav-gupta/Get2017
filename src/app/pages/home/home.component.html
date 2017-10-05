@@ -68,7 +68,7 @@
       <div class="card mb-3" *ngFor="let post of posts">
         <div class="card-header">
           <img src="http://www.myiconfinder.com/uploads/iconsets/1885a6e83769f02e9448d136e58d780f-pictures.png" width="30"> 
-          <span (click)="profile(post.userId)" class="post-anchor font-14" *ngIf="user"> {{user.name}}</span>
+          <span (click)="profile(user.id)" class="post-anchor font-14" *ngIf="user"> {{user.name}}</span>
             <div class="dropdown float-right">
               <span class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"></span>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

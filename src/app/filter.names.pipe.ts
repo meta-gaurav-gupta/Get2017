@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { User } from './pages/home/user';
+import { User } from './models/user';
 /*
  * Raise the value exponentially
  * Takes an exponent argument that defaults to 1.

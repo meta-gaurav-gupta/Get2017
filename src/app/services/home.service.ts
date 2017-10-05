@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { Post } from '../pages/home/post';
-import { User } from '../pages/home/user';
-import { Comment } from '../pages/home/comment';
+
+import { Post } from '../models/post';
+import { User } from '../models/user';
+import { Comment } from '../models/comment';
 
 @Injectable()
 export class HomeService {
@@ -34,7 +35,7 @@ export class HomeService {
 
   getUser(id: number): Promise<User> {
     if (id === undefined) { return undefined; }
-    return this.http.get(this.userUrl + id).toPromise().then((response) => response.json() as User).catch(this.handleError);
+    return this.http.get(this.userUrl + id).toPromise().then((response) => response.json()).catch(this.handleError);
   }
 
   getComments(postId: number): Promise<Comment[]> {
@@ -65,7 +66,6 @@ export class HomeService {
 
   getCurrentUser(): number {
     let currentUser = JSON.parse(localStorage.getItem('userId'));
-    console.log('currentUser ' + currentUser);
     return currentUser;
   }
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HomeService } from '../../services/home.service';
 
-import { User } from '../home/user';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-profile',

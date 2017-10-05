@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HomeService } from '../../services/home.service';
-import { Post } from './post';
-import { User } from './user';
-import { Comment } from './comment';
+import { Post } from '../../models/post';
+import { User } from '../../models/user';
+import { Comment } from '../../models/comment';
 import { FilterNamePipe } from '../../filter.names.pipe';
 import 'rxjs/add/operator/switchMap';
 
@@ -13,7 +13,6 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   posts: Post[] = [];
   friends: User[] = [];
   user: User;
@@ -57,7 +56,6 @@ export class HomeComponent implements OnInit {
   }
 
   getUser(): void {
-    console.log(this.homeService.getCurrentUser());
     this.homeService.getUser(this.homeService.getCurrentUser()).then((user) => this.user = user);
   }
 
